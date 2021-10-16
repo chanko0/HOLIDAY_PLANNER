@@ -1,0 +1,15 @@
+<%= form_with model: @post, local:true do |f| %>
+  <h4>画像</h4>
+  <%= f.attachment_field :image %>
+  <h4>タイトル</h4>
+  <%= f.text_field :title %>
+  <h4>都道府県</h4>
+  <%= f.text_field :prefecture %>
+  <h4>詳細エリア</h4>
+  <%= f.text_field :city %>
+  <h4>説明</h4>
+  <%= f.text_area :content %>
+  <%= f.submit '変更を保存' %>
+
+  <%= link_to "削除", post_path(@post), method: :delete %>
+<% end %>

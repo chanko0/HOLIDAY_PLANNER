@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  review_id: 1
+  prefectures: MyString
+  city: MyString
+  post_image_url: MyString
+  title: MyText
+  content: MyText
+
+two:
+  user_id: 1
+  review_id: 1
+  prefectures: MyString
+  city: MyString
+  post_image_url: MyString
+  title: MyText
+  content: MyText

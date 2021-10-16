@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'users/show'
   root to: 'homes#top'
   devise_for :users
   resources :posts, only: [:new, :create, :index, :show, :destroy, :edit, :update] do
@@ -6,4 +7,5 @@ Rails.application.routes.draw do
     resource :favorites, only: [:create, :destroy]
   end
   get 'search' => 'searches#search'
+  resources :users, only: [:show, :edit, :update]
 end

@@ -16,5 +16,6 @@
   ♥<%= post.favorites.count %>いいね
 </div>
 <% end %>
-<p><%= link_to "投稿一覧", posts_path(@post) %></p>
+<%= link_to "いいねした投稿",favorites_user_path(@user) %>
+<%= link_to "投稿一覧", posts_path(@post) %>
 <%= paginate @posts %>

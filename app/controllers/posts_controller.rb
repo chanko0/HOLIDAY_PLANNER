@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  
   def new
     @post = Post.new
   end
@@ -15,6 +16,10 @@ class PostsController < ApplicationController
 
   def index
     @post_favorites = Post.includes(:favorited_users).sort {|a,b| b.favorited_users.size <=> a.favorited_users.size}
+    @posts = Post.page(params[:page]).reverse_order
+  end
+
+  def view
     @posts = Post.page(params[:page]).reverse_order
   end
 
@@ -38,9 +43,6 @@ class PostsController < ApplicationController
     @post.destroy
     redirect_to posts_path
   end
-
-
-  private
 
   def post_params
     params.require(:post).permit(:image, :title, :prefecture, :city, :content)

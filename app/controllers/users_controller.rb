@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     @favorite_posts = Post.find(favorites)
     @posts = Post.page(params[:page]).reverse_order
   end
-  
+
   private
 
   def user_params

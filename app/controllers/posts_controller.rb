@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  
+
   def new
     @post = Post.new
   end
@@ -43,8 +43,11 @@ class PostsController < ApplicationController
     @post.destroy
     redirect_to posts_path
   end
+  
+  private
 
   def post_params
     params.require(:post).permit(:image, :title, :prefecture, :city, :content)
   end
+
 end

@@ -4,6 +4,7 @@
     <title>HOLIDAYPlanner</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <script src="https://kit.fontawesome.com/fe0016bc2d.js" crossorigin="anonymous"></script>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -13,7 +14,7 @@
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-info">
         <div class="container">
-          <a class="navbar-brand" href="/"><span>HOLIDAY PLANNER</span></a>
+          <a class="navbar-brand" href="/posts"><span>HOLIDAY PLANNER</span></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -21,17 +22,23 @@
             <ul class="navbar-nav ml-auto">
             <% if user_signed_in? %>
               <li>
-                <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+                <%= link_to "sign out", destroy_user_session_path, class: "text-white mr-3", method: :delete %>
               </li>
               <li>
-               <%= link_to 'マイページ', user_path(current_user.id) %>
+               <%= link_to 'my page', user_path(current_user.id), class: "text-white mr-3" %>
+              </li>
+              <li>
+                <%= link_to 'top', posts_path, class: "text-white mr-3" %>
+              </li>
+              <li>
+                <%= link_to 'post', new_post_path, class: "text-white" %>
               </li>
             <% else %>
               <li>
-                <%= link_to "新規登録", new_user_registration_path %>
+                <%= link_to "sign up", new_user_registration_path, class: "text-white mr-3" %>
               </li>
               <li>
-                <%= link_to "ログイン", new_user_session_path %>
+                <%= link_to "sign in", new_user_session_path, class: "text-white" %>
               </li>
             <% end %>
           </div>
@@ -39,10 +46,12 @@
       </nav>
     </header>
     <% if user_signed_in? %>
-     <div class="search-form">
+     <div class="row my-4 search-form justify-content-center">
       <%= form_with url: search_path, method: :get, local: true do |f| %>
-       <%= f.text_field :keyword, value: @keyword %>
-       <%= f.submit "検索" %>
+       <%= f.text_field :keyword, value: @keyword, placeholder: "渋谷" %>
+       <%= button_tag :type => "submit", :class =>"btn btn-default btn-s-md" do %>
+        <i class="fa fa-search"></i>
+       <% end %>
       <% end %>
      </div>
     <% end %>

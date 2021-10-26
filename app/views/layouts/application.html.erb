@@ -46,7 +46,7 @@
       </nav>
     </header>
     <% if user_signed_in? %>
-     <div class="row my-4 search-form justify-content-center">
+     <div class="row my-5 search-form justify-content-center">
       <%= form_with url: search_path, method: :get, local: true do |f| %>
        <%= f.text_field :keyword, value: @keyword, placeholder: "渋谷" %>
        <%= button_tag :type => "submit", :class =>"btn btn-default btn-s-md" do %>

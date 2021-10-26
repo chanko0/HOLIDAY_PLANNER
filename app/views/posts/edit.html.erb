@@ -1,15 +1,39 @@
 <%= form_with model: @post, local:true do |f| %>
-  <h4>画像</h4>
-  <%= f.attachment_field :image %>
-  <h4>タイトル</h4>
-  <%= f.text_field :title %>
-  <h4>都道府県</h4>
-  <%= f.text_field :prefecture %>
-  <h4>詳細エリア</h4>
-  <%= f.text_field :city %>
-  <h4>説明</h4>
-  <%= f.text_area :content %>
-  <%= f.submit '変更を保存' %>
-
-  <%= link_to "削除", post_path(@post), method: :delete %>
+<div class='container'>
+  <div class="row justify-content-center mb-5">
+   <br><br>
+      <% if @post.errors.any? %>
+        <%= @post.errors.count %>件のエラーが発生しました
+        <% @post.errors.full_messages.each do |message| %>
+          <%= message %>
+        <% end %>
+      <% end %>
+  </div>
+  <div class="row">
+    <div class="col text-secondary">
+      <div>
+        <h4>Picture</h4>
+        <%= f.attachment_field :image %>
+      </div>
+      <div class="my-5">
+        <h4>Title</h4>
+        <%= f.text_field :title, size: "50" %>
+      </div>
+      <div>
+        <h4>Prefecture</h4>
+        <%= f.text_field :prefecture,  size: "20",  placeholder: "東京"%>
+      </div>
+      <div class="my-5">
+        <h4>Area</h4>
+        <%= f.text_field :city,  size: "20",  placeholder: "渋谷" %>
+      </div>
+      <%= f.submit 'post', class: "bg-primary text-white" %>
+    </div>
+    <div class="col text-secondary">
+      <h4>Plan</h4>
+      <%= f.text_area :content,  size: "50x20" %>
+    </div>
+  </div>
+  </div>
+</div>
 <% end %>

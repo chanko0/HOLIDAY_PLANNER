@@ -77,12 +77,12 @@
       <% end %>
     <% end %>
   </div>
+     <%= form_with(model:[@post, @post_comment], local: true) do |f| %>
      <div class="mt-4">
-      <%= form_with(model:[@post, @post_comment], local: true) do |f| %>
         <%= f.text_area :comment, size: "58x5", rows:'5'%>
-        <%= f.submit "comment", class: "bg-primary text-white" %>
-      <% end %>
      </div>
+        <%= f.submit "comment", class: "bg-primary text-white" %>
+     <% end %>
     </div>
     <div class="col-4">
       <div>

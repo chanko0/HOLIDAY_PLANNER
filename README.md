@@ -10,9 +10,9 @@
 休日を快適に過ごす
 
 ### テーマを選んだ理由
-休日の過ごし方を考えてくれる人がいたら良いなという自分本位な思いから、このサービスを作成しました。
+休日の過ごし方を参考にできるサイトがあれば、より良い時間になるのではないかと思いこのサービスを作成しました。
 自分自身休日をダラダラと過ごしてしまう事が多く、いざ出かけようと思っても、どこに行くか決められないことや、出掛けたとしても、１つ２つと用事を済ませ、その後の予定を決められず帰宅してしまう事が多々あります。
-そういった時に、おすすめのプランが提供されているサイトから、自分好みのものを選べればより良い休日になると考えました。
+そういった時に、おすすめのプランが提供されているサイトから、自分好みのものを選べればより良い休日になると考えこちらのテーマを選びました。
 
 ### ターゲットユーザ
 ・休日の過ごし方が決まっていない方
@@ -20,9 +20,6 @@
 
 ### 主な利用シーン
 休日の過ごし方が決まっていない、また出先でどこにいくか決まっていない時に気軽に調べる事ができる。
-
-## 設計書
-後日記述
 
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/1EsjxVqUV2WyJc36lTwrdoHt4HxwXaliF0mnWkiHyXGw/edit?usp=sharing
@@ -34,5 +31,13 @@ https://docs.google.com/spreadsheets/d/1EsjxVqUV2WyJc36lTwrdoHt4HxwXaliF0mnWkiHy
 - JSライブラリ：jQuery
 - IDE：Cloud9
 
-## 使用素材
-- 未定
+## gem
+・devise
+・refile/refile-mini_magic
+・kaminari1.2.1
+・bootstrap4.5
+・jquery-rails
+・font-awesome-sass5.13
+・pry-byebug
+・dotenv-rails
+・mysql2
